@@ -22,7 +22,7 @@
 	
 </template>
 
-<style >
+<style scoped="">
 	header{
 		width: 100%;
 		background-color: #2C3E50;
