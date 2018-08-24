@@ -1,7 +1,10 @@
 <template>
 	<transition name="fade">
-		<div class="login" transiton="fade" v-show="isshow">
+		<div class="login" v-show="isshow">
 			<div class="bg">
+				<header>
+					<span><router-link to="/headline"><</router-link></span>
+				</header>
 				<div class="box">
 					<div class="head-pic">
 						<img src="../../assets/image/29.png"/>
@@ -12,6 +15,7 @@
 					</div>
 				</div>
 				<div class="btn">
+					<p><router-link :to="{path:'/register',query:{show:'ture'}}">立即注册>></router-link></p>
 					<input type="button" class="login-btn" value="登录" />
 					<div class="trip">
 						<input type="checkbox" name="" id="" value="" />
@@ -26,7 +30,19 @@
 <script>
 </script>
 
-<style>
+<style scoped="">
+	header{
+		width: 100%;
+		padding: 5px 10px;
+		background: rgba(0,0,0,0.5);
+		box-sizing: border-box;
+		text-align: left;
+	}
+	header a{
+		color: white;
+		font-size: 21px;
+		text-decoration: none;
+	}
 	.login{
 		display: block;
 		position: fixed;
@@ -46,7 +62,7 @@
 	.box{
 		width: 90%;
 		margin: 0px auto;
-		margin-top: 150px;
+		margin-top: 120px;
 		/*background: tan;*/
 		overflow: hidden;
 		box-sizing: border-box;
@@ -74,14 +90,22 @@
 		margin-top: 15px;
 		padding-left: 10px;
 		outline: none;
-		background:rgba(255,255,255,0.5);
+		background:rgba(255,255,255,0.4);
 		border-bottom:1px solid #2C3E50;
 		border-width: 0px 0px 1px 0px;
 		color: white;
 	}
 	.trip{
+		position: relative;
 		color: white;
 		font-size: 10px;
+		/*background-color: red;*/
+	}
+	.trip p{
+		display: block;
+		position: absolute;
+		top: 0px;
+		right: 0px;
 	}
 	.trip input{
 		display: inline-block;
@@ -110,11 +134,21 @@
 	   color:    #fff;
 	}
 	.btn{
-		position: absolute;
 		bottom: 80px;
 		display: block;
-		width: 100%;
-		margin: 0px 0px 15px 0px;
+		width: 90%;
+		margin: 40px auto;
+	}
+	.btn p{
+		margin: 0px;
+		padding-right: 43px;
+		text-align: right;
+		
+	}
+	.btn p a{
+		color: white;
+		font-size: 5px;
+		text-decoration: none;
 	}
 	.btn>input{
 		border: none;

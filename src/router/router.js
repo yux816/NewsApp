@@ -12,6 +12,7 @@ import health from '../components/news/health.vue'
 import recreation from '../components/news/recreation.vue'
 import sports from '../components/news/sports.vue'
 import finance from '../components/news/finance.vue'
+import register from '../components/content/register.vue'
 
 Vue.use(Router);
 
@@ -59,8 +60,12 @@ export default new Router({
 		},
 		{path:'/search',component:search},
 		{
-					path:'/login',
-					component:login
-				}
+			path:'/login',
+			component:login
+		},
+		{
+			path:'/register',
+			component:register
+		}
 	]
 })
