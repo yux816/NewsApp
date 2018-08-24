@@ -3,10 +3,11 @@
 		<header>
 			评论
 		</header>
-		<ul>
-			<li v-for="(v,i) in list" v-if="v.ptime">
+		<ul >
+			<li v-for="(v,i) in list" v-if="v.ptime" >
 				<p>{{v.title}}</p>
-				<span>{{v.ptime}} <i class="iconfont">&#xe60d</i></span>
+				<span>{{v.ptime}}</span>
+				<i class="iconfont">{{num[i]}} &#xe60d </i>
 			</li>
 		</ul>
 	</div>
@@ -26,7 +27,7 @@
 	}
 	.comment ul li{
 		position: relative;
-		height: 100px;
+		height: 80px;
 		list-style: none;
 		margin: 0px 10px;
 		text-align: left;
@@ -37,10 +38,17 @@
 	}
 	.comment ul li span{
 		position: absolute;
-		bottom: 0px;
-		left: 0px;
+		bottom: 3px;
+		left: 3px;
 		color: darkgrey;
 		font-size: 12px;
+	}
+	.comment ul li i{
+		float: right;
+		position: absolute;
+		right: 3px;
+		bottom: 3px;
+		color: black;
 	}
 	@font-face {
 	  font-family: 'iconfont';
@@ -57,7 +65,7 @@
 	  -webkit-text-stroke-width: 0.2px;
 	  -moz-osx-font-smoothing: grayscale;
 	  padding: 0px 5px;
-	  font-size: 12px;
+	  font-size: 13px;
 	}
 </style>
 
@@ -65,15 +73,30 @@
 	export default{
 		data(){
 			return{
-				list:[]
+				list:[],
+				num:[]
 			}
+		},
+		methods:{
+//			ran(){
+//				for(var i;i<20;i++){
+//					this.num[i] = parseInt(Math.random()*100);
+//					console.log("5201314");
+//				}
+//			}
 		},
 		mounted(){
 			this.$axios.get("comment.json").
 			then((res)=>{
 				console.log(res.data.comment);
 				this.list = res.data.comment;
+				
 			})
+
+				for(var i;i<20;i++){
+					this.num[i] = parseInt(Math.random()*100);
+					console.log("5201314");
+				}
 		}
 	}
 </script>

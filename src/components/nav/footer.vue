@@ -48,13 +48,10 @@
 		z-index: 100;
 	}
 	.this{
-		/*content: '';*/
 		position: absolute;
 		top: -6px;
 		left: 50%;
 		margin-left: -8px;
-		/*width: 20px;
-		height: 20px;*/
 		border-bottom: 5px solid white;
 		border-left: 5px solid transparent;
 		border-top: 10px solid transparent;
@@ -75,18 +72,6 @@
 	    background-color: #fff;
 	    z-index: 10;
 	}
-	/*li:nth-of-type(1){
-		background:url(../../assets/image/newsbgs.png) no-repeat center top;
-	}
-	li:nth-of-type(2){
-		background:url(../../assets/image/hotbgs.png) no-repeat center top;
-	}
-	li:nth-of-type(3){
-		background:url(../../assets/image/commentbgs.png) no-repeat center top;
-	}
-	li:nth-of-type(4){
-		background:url(../../assets/image/minebgs.png) no-repeat center top;
-	}*/
 	@font-face {
 	  font-family: 'iconfont';
 	  src: url('../../assets/css/iconfont/iconfont.eot');

@@ -2,10 +2,26 @@
 	<div class="headline">
 		<div >
 			<ul class="movepic">
-				<li><img src="../../assets/image/banner1.jpg" alt="" /></li>
-				<li><img src="../../assets/image/banner2.jpg" alt="" /></li>
-				<li><img src="../../assets/image/banner3.jpg" alt="" /></li>
-				<li><img src="../../assets/image/banner1.jpg" alt="" /></li>	
+				<li>
+					<img src="../../assets/image/b1.jpg" alt="" />
+					<span>试药人：日薪1千的医药志愿者</span>
+				</li>
+				<li>
+					<img src="../../assets/image/b2.jpg" alt="" />
+					<span>路段“屡修屡塌”又显大坑</span>
+				</li>
+				<li>
+					<img src="../../assets/image/b3.jpg" alt="" />
+					<span>盲眼老人黑暗中绘出惊艳画作</span>
+				</li>
+				<li>
+					<img src="../../assets/image/b4.jpg" alt="" />
+					<span>难民袭击警察  强闯西班牙边境</span>
+				</li>	
+				<li>
+					<img src="../../assets/image/b1.jpg" alt="" />
+					<span>试药人：日薪1千的医药志愿者</span>
+				</li>
 			</ul>
 		</div>
 		
@@ -37,15 +53,14 @@
 				}).then(function(res){
 					console.log(res.body.news);
 					this.list = res.body.news;
-//					console.log(res.body.list[0].picInfo[0].url);
 				})
 	
 				$(".list>ul>li").click(function(){
-					$(this).css({"border-radius":"10px 10px 0px 0px","background":"white"})
-					$(this).siblings().css({"border-radius":"none","background":"#2C3E50"});
-					$(this).children('a').css({"color":"#2C3E50"})
-					$(this).siblings().children('a').css({"color":"#fff"})
+					$(this).css({"border-bottom":"3px solid #fff"});
+					$(this).siblings().css({"border-bottom":"3px solid #2C3E50"})
 				})
+
+			
 				
 //				this.$axios.get("http://sinanews.sina.cn/interface/type_of_search.d.html",{
 //					params: { }
@@ -58,13 +73,13 @@
 				
 				var num = 1;
 				setInterval(function(){
-					if(num>3){
+					if(num>4){
 						$('.movepic').css({"left":"0%"})
 						num=1
 					}
 					$('.movepic').animate({"left":num*-100+"%"})
 					num++;
-				},1000)
+				},3000)
 
 			}
 		
@@ -78,24 +93,37 @@
 	}
 	.movepic {
 		position: relative;
-		width: 400%;
+		width: 500%;
 		padding: 10px 0px;
 		margin: 0px ;
 		overflow: hidden;
 		box-sizing: border-box;
 	}
 	.movepic li{
-		width: 25%;
+		position: relative;
+		width: 20%;
 		list-style: none;
 		float: left;
 	}
 	.movepic li img{
 		width: 100%;
 	}
+	.movepic li span{
+		position: absolute;
+		text-align: left;
+		padding:6px ;
+		width: 100%;
+		background: rgba(0,0,0,0.5);
+		bottom: 4px;
+		left: 0px;
+		color: white;
+	}
 	.news-list{
-		margin-bottom: 40px;
+		padding: 0px 10px;
+		margin-bottom: 60px;
 	}
 	.news-list li{
+		text-align: left;
 		position: relative;
 		overflow: hidden;
 		padding: 15px 0px;

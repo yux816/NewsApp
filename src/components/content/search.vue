@@ -1,7 +1,7 @@
 <template>
 	<div class="select">
 		<header>
-			<span><router-link to="/news"><</router-link></span>
+			<span><router-link to="/headline"><</router-link></span>
 			搜索
 		</header>
 		<div class="search">

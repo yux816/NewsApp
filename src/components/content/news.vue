@@ -7,7 +7,7 @@
 			</div>
 			<div class="list">
 				<ul>
-					<li><router-link to="/news">头条</router-link> </li>
+					<li class="listactive"><router-link to="/headline">头条</router-link> </li>
 					<li><router-link to="/finance">财经</router-link> </li>
 					<li><router-link to="/recreation">娱乐</router-link> </li>
 					<li><router-link to="/fashion">时尚</router-link> </li>
@@ -66,23 +66,18 @@
 		list-style: none;
 		float: left;
 		width: 17%;
-		/*background-color: red;*/
-		/*border-radius:20px 20px 0px 0px*/
-		/*border-bottom:2px solid #2C3E50;*/
+		padding-bottom: 7px;
+		border-bottom: 3px solid #2C3E50;
 	}
-	.list ul li:nth-of-type(1){
-		border-radius:10px 10px 0px 0px;
-		background-color: white;
-	}
-	.list ul li:nth-of-type(1) a{
-		color: #2C3E50;
+	li.listactive{
+		border-bottom: 3px solid #fff;
 	}
 	.list ul li a{
 		color: white;
 		text-decoration: none;
 	}
 	.news-list {
-		padding: 10px;
+		padding: 20px;
 		margin-top: 0px;
 	}
 	.news-list  li{
@@ -95,6 +90,7 @@
 	}
 	.news-list img{
 		width: 100%;
+
 	}
 </style>
 
@@ -109,21 +105,9 @@
 		mounted(){
 	
 				$(".list>ul>li").click(function(){
-					$(this).css({"border-radius":"10px 10px 0px 0px","background":"white"})
-					$(this).siblings().css({"border-radius":"none","background":"#2C3E50"});
-					$(this).children('a').css({"color":"#2C3E50"})
-					$(this).siblings().children('a').css({"color":"#fff"})
+					$(this).css({"border-bottom":"3px solid #fff"});
+					$(this).siblings().css({"border-bottom":"3px solid #2C3E50"})
 				})
-				
-//				this.$http.jsonp("http://3g.163.com/touch/jsonp/sy/recommend/0-20.html?callback",{
-//					params:{
-//						keyword:this.msg
-//					},jsonp:"callback"
-//				}).then(function(res){
-//					console.log(res.body.list);
-//					this.list = res.body.list;
-//					console.log(res.body.list[0].picInfo[0].url);
-//				})
 
 			}
 		

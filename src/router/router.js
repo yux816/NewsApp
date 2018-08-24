@@ -19,7 +19,7 @@ export default new Router({
 	routes:[
 		{
 			path:'/',
-			component:headline
+			redirect:'/headline'
 		},
 		{
 			path:'/news',

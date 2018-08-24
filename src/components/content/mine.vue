@@ -22,10 +22,9 @@
 				<li><i class="iconfont">&#xe63b</i>设置<span>></span></li>
 			</ul>
 		</div>
-		<div class="mine-btn">
-			<router-link to="/login"><input type="button" value="切换账号" /></router-link>
+		<div class="mine-btn" @click="loginshow">
+			<router-link :to="{path:'/login',query:{show:'ture'}}"><input type="button" value="切换账号" /></router-link>
 		</div>
-		
 	</div>
 	
 </template>
@@ -33,9 +32,7 @@
 <style scoped="">
 	.mine{
 		position: relative;
-		/*background-color: red;*/
 		overflow: hidden;
-		/*background: #f0f0f0;*/
 	}
 	header{
 		width: 100%;
@@ -54,7 +51,6 @@
 		float: left;
 		width: 100px;
 		height: 100px;
-		/*background-color: red;*/
 		border-radius: 50%;
 		border: 1px solid gainsboro;
 		margin-bottom: 10px;
@@ -97,9 +93,14 @@
 	.mine-btn{
 		margin: 10px auto;
 	}
-	.mine-btn{
-		/*display: block;*/
-		width: 100px;
+	.mine-btn input{
+		border: none;
+		outline: none;	
+		width: 150px;
+		height: 30px;
+		border-radius: 6px;
+		background: #CD5C5C;
+		color: whitesmoke;
 	}
 	@font-face {
 	  font-family: 'iconfont';
@@ -119,3 +120,19 @@
 	}
 	
 </style>
+
+<script>
+	export default{
+		data(){
+			return{
+				isshow:'false'
+			}
+		},
+		methods:{
+			loginshow(){
+				this.isshow = 'true';
+				console.log(this.isshow)
+			}
+		}
+	}
+</script>
