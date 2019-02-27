@@ -6,11 +6,14 @@ import axios from 'axios'
 import  qs from 'qs'
 import st from './assets/js/style.js'
 import $ from 'jquery'
+import vant from 'vant'
 
 Vue.prototype.$qs = qs
 Vue.prototype.$axios=axios
 Vue.use(Router);
 Vue.use(Resource)
+Vue.use(vant)
+import 'vant/lib/index.css';
 
 
 import router from "./router/router.js"

@@ -46,13 +46,13 @@
 		},
 		mounted(){
 		
-				this.$http.jsonp("http://3g.163.com/touch/jsonp/sy/recommend/0-20.html?callback",{
-					params:{
-						keyword:this.msg
-					},jsonp:"callback"
-				}).then(function(res){
-					console.log(res.body.news);
-					this.list = res.body.news;
+
+				this.$axios.get("/api/touch/jsonp/sy/recommend/0-20.html")
+				.then((res) =>{
+					let result = (res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[0].concat((res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[1])
+					// (res.data.split('(')[1]).split(')')[0]
+					// console.log(result)
+					this.list = JSON.parse(result).news
 				})
 	
 				$(".list>ul>li").click(function(){
@@ -60,17 +60,6 @@
 					$(this).siblings().css({"border-bottom":"3px solid #2C3E50"})
 				})
 
-			
-				
-//				this.$axios.get("http://sinanews.sina.cn/interface/type_of_search.d.html",{
-//					params: { }
-//				}).then((res)=>{
-//					console.log(res.data.comment);
-//					console.log(typeof(this.list));
-//					console.log(typeof(res.data.comment))
-//					this.list = res.data.comment;
-//				})
-				
 				var num = 1;
 				setInterval(function(){
 					if(num>4){
