@@ -46,12 +46,10 @@
 		},
 		mounted(){
 		
-
 				this.$axios.get("/api/touch/jsonp/sy/recommend/0-20.html")
 				.then((res) =>{
-					let result = (res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[0].concat((res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[1])
-					// (res.data.split('(')[1]).split(')')[0]
-					// console.log(result)
+					let result = (res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[0]				
+					console.log(result)
 					this.list = JSON.parse(result).news
 				})
 	
