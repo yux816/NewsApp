@@ -46,12 +46,22 @@
 		},
 		mounted(){
 		
-				this.$axios.get("/api/touch/jsonp/sy/recommend/0-20.html")
+				// this.$axios.get("/api/touch/jsonp/sy/recommend/0-20.html")
+				// .then((res) =>{
+				// 	let result = (res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[0]				
+				// 	console.log(result)
+				// 	this.list = JSON.parse(result).news
+				// })
+
+				this.$jsonp("/api/touch/jsonp/sy/recommend/0-20.html")
 				.then((res) =>{
-					let result = (res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[0]				
-					console.log(result)
-					this.list = JSON.parse(result).news
+					// let result = (res.data.split('(')[1].concat(res.data.split('(')[2])).split(')')[0]				
+					// console.log(result)
+					// this.list = JSON.parse(result).news
+					console.log(res.news)
+					this.list = res.news
 				})
+
 	
 				$(".list>ul>li").click(function(){
 					$(this).css({"border-bottom":"3px solid #fff"});
